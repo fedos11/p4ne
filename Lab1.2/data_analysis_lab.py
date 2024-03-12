@@ -1,10 +1,7 @@
 from matplotlib import pyplot
 from openpyxl import load_workbook
-
 def extract_value(cell):
     return cell.value
-
-
 wb = load_workbook('data_analysis_lab.xlsx')
 
 a_column = list(map(extract_value, wb['Data']['A'][1:]))
