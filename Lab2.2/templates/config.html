@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<body>
+Found hostnames:<br>
+<ul>
+  {% for hostname in hostnames %}
+    <li><a href="/config/{{ hostname }}">{{ hostname }}</a></li>
+  {% endfor %}
+</ul>
+</body>

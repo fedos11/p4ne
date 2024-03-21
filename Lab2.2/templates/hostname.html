@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostname Config</title>
+</head>
+<body>
+    <h1>Hostname: {{ hostname }}</h1>
+    <h2>Interfaces:</h2>
+    <ul>
+        {% for interface in interfaces %}
+            <li>{{ interface }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+- hosts: fs-ga
+  tasks:
+    - name: show received ip
+      command: ifconfig
+      register: interfaces
+
+    - name: show RX
+      set_fact:
+        packets: "{{ interfaces.stdout | regex_findall('RX packets ([0-9]+)') }}"
+
+
+    - name: summarize RX
+      set_fact:
+        total_packets: "{{ packets | map('int') | sum }}"
+
+    - name: print result
+      debug:
+        msg: "Общее количество полученных пакетов: {{ total_packets }}"
